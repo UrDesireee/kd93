@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentEventElement && eventsContainer) {
         // Input your events here
         const events = [
-            { name: "Waiting period for unsealed of lvl 7 passes", time: "2024-07-24 06:25" },
+            { name: "Waiting period for unsealed of lvl 7 passes", time: "2024-07-24 19:25" },
             { name: "Your alliance controlled 1 lvl. 7 pass", time: "2024-07-25 06:25" },
             { name: "Waiting period for activation Altar of Darkness", time: "2024-07-26 18:25" },
             { name: "Your troops defeated 3 dark stalkers", time: "2024-07-27 06:25" },
