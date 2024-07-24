@@ -1,8 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Hamburger Menu Toggle
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navbar = document.querySelector('.navbar');
+
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    }
+
+    // Event Handling
     const events = [
         { name: "Defeat 100 lvl 8 Forts", time: "24.07 19:00 UTC" },
-        { name: "Pass 7 Opens", time: "25.07 06:25UTC" },
-        { name: "Another Event", time: "26.07 10:00UTC" }
+        { name: "Pass 7 Opens", time: "25.07 06:25 UTC" },
+        { name: "Another Event", time: "26.07 10:00 UTC" }
     ];
 
     const currentEventElement = document.getElementById('currentEvent');
@@ -30,14 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function parseDate(dateStr) {
-        const [day, monthTime] = dateStr.split('.');
+        const [day, monthTime] = dateStr.split(' ');
         const [month, time] = monthTime.split(' ');
         const [hour, minute] = time.replace('UTC', '').split(':');
-        return new Date(Date.UTC(new Date().getFullYear(), month - 1, day, hour, minute));
+        const [dayStr, monthStr] = day.split('.');
+        return new Date(Date.UTC(new Date().getFullYear(), monthStr - 1, dayStr, hour, minute));
     }
 
     function formatDate(date) {
         return `${date.getUTCDate()}.${date.getUTCMonth() + 1} ${date.getUTCHours()}:${date.getUTCMinutes()}UTC`;
     }
 });
-

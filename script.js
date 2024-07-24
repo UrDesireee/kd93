@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Handling Modal for Image Gallery (if needed)
+    // Handling Modal for Image Gallery
     const articles = document.querySelectorAll('.falling-text-container');
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Close Modal
     const closeModal = document.querySelector('.close');
     if (closeModal) {
         closeModal.addEventListener('click', () => {
