@@ -16,9 +16,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentEventElement && eventsContainer) {
         // Input your events here
         const events = [
-            { name: "Defeat 100 lvl 8 Forts", time: "2024-07-24 19:00" },
-            { name: "Pass 7 Opens", time: "2024-07-25 06:25" },
-            { name: "Another Event", time: "2024-07-26 10:00" }
+            { name: "Waiting period for unsealed of lvl 7 passes", time: "2024-07-25 06:25" },
+            { name: "Your alliance controlled 1 lvl. 7 pass", time: "2024-07-25 06:25" },
+            { name: "Waiting period for activation Altar of Darkness", time: "2024-07-26 18:25" },
+            { name: "Your troops defeated 3 dark stalkers", time: "2024-07-27 06:25" },
+            { name: "Your alliance destroyed 100 lvl. 9 barbarian forts", time: "2024-07-27 18:25" },
+            { name: "Can build in Kingsland. Your troops killed/severely wounded 2,000,000 troops of other camps", time: "2024-07-30 18:25" },
+            { name: "Governors defeated a total of 100,000 lvl. 36+ barbarian troops", time: "2024-08-01 18:25" },
+            { name: "Waiting Ziggurat", time: "2024-08-03 18:25" },
+            { name: "Your alliance controls the Ziggurat", time: "2024-08-04 06:25" },
+            { name: "Your City Hall reached lvl 25", time: "2024-08-06 18:25" },
+            { name: "Waiting period for unsealed of lvl 8 passes", time: "2024-08-08 18:25" },
+            { name: "Your alliance controlled 1 lvl. 8 pass", time: "2024-08-09 06:25" },
+            { name: "Your alliance destroyed 100 lvl. 10+ barbarian forts", time: "2024-08-10 18:25" },
+            { name: "Your kingdom controls 2 Sanctuaries", time: "2024-08-12 18:25" },
+            { name: "Your kingdom controls 6 Circles", time: "2024-08-14 18:25" }
         ];
 
         updateEvents(events, currentEventElement, eventsContainer);
