@@ -9,22 +9,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Event Handling (for calendar.html)
-    if (document.getElementById('currentEvent')) {
+    // Event Handling
+    const currentEventElement = document.getElementById('currentEvent');
+    const eventsContainer = document.getElementById('eventsContainer');
+
+    if (currentEventElement && eventsContainer) {
         // Input your events here
         const events = [
-            { name: "Defeat 100 lvl 8 Forts", time: "2024-07-23 19:00" },
+            { name: "Defeat 100 lvl 8 Forts", time: "2024-07-24 19:00" },
             { name: "Pass 7 Opens", time: "2024-07-25 06:25" },
             { name: "Another Event", time: "2024-07-26 10:00" }
         ];
 
-        updateEvents(events);
+        updateEvents(events, currentEventElement, eventsContainer);
     }
 });
 
-function updateEvents(events) {
-    const currentEventElement = document.getElementById('currentEvent');
-    const eventsContainer = document.getElementById('eventsContainer');
+function updateEvents(events, currentEventElement, eventsContainer) {
     const now = new Date();
 
     // Sort events by date
