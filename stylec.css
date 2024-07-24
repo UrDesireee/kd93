@@ -1,101 +1,106 @@
-/* Keyframes for color changing text */
 @keyframes colorChange {
-    0% { color: #ff69b4; }
-    33% { color: #9370db; }
-    66% { color: #1e90ff; }
-    100% { color: #ff1493; }
+    0% { color: #ff69b4; }  /* Hot Pink */
+    33% { color: #9370db; } /* Medium Purple */
+    66% { color: #1e90ff; } /* Dodger Blue */
+    100% { color: #ff1493; } /* Deep Pink */
 }
 
-/* Body and General Styles */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Header and Navbar */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #2c3e50;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #333; /* Static background color */
+    box-sizing: border-box;
 }
 
 .animated-text {
     font-family: 'Cinzel', serif;
-    font-size: 28px;
+    font-size: 30px;  /* Font size for KINGDOM */
+    font-weight: bold;
     animation: colorChange 5s infinite;
+    text-align: center;
+    color: white;
 }
 
-.sub-text {
-    font-size: 24px;
-    margin-left: 10px;
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 15px;
 }
 
 .navbar {
     display: flex;
     gap: 15px;
+    transition: max-height 0.3s ease;
 }
 
 .nav-button {
     font-size: 16px;
-    padding: 10px 15px;
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid transparent;
+    padding: 10px 20px;
+    background-color: #4CAF50;  /* Green */
+    color: white;
+    border: none;
     border-radius: 5px;
-    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Ensure links don't have underlines */
+    text-align: center; /* Center text in buttons */
 }
 
 .nav-button:hover {
-    background-color: #34495e;
-    border-color: #ecf0f1;
+    background-color: #45a049;  /* Darker green */
 }
 
-/* Main Content */
-.content-container {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 0 auto;
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 20px;
 }
 
-.current-event-title {
-    font-family: 'Cinzel', serif;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
 
-.upcoming-events-title {
-    font-family: 'Cinzel', serif;
-    font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
+    .hamburger-menu {
+        display: block;
+    }
 
-.events-list {
-    text-align: left;
-    font-size: 18px;
-    margin-top: 20px;
-}
+    .navbar {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
 
-.events-list div {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
+    .navbar.active {
+        max-height: 500px; /* Arbitrary large number to ensure full display */
+    }
 
-.events-list div:hover {
-    transform: scale(1.02);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    .nav-button {
+        width: 100%;
+        text-align: left;
+        padding: 15px;
+    }
 }
