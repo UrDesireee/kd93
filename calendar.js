@@ -46,7 +46,7 @@ function updateEvents(events, currentEventElement, eventsContainer) {
 
     // Display current event
     if (currentEvent) {
-        currentEventElement.textContent = `${currentEvent.name} (${formatDate(new Date(currentEvent.time + " UTC"))})`;
+        currentEventElement.textContent = `${currentEvent.name} (${formatDateUniversal(new Date(currentEvent.time + " UTC"))})`;
     } else {
         currentEventElement.textContent = "No current event";
     }
@@ -55,18 +55,18 @@ function updateEvents(events, currentEventElement, eventsContainer) {
     eventsContainer.innerHTML = "";
     upcomingEvents.forEach(event => {
         const eventElement = document.createElement('div');
-        eventElement.textContent = `${event.name} - ${formatDate(new Date(event.time + " UTC"))}`;
+        eventElement.textContent = `${event.name} - ${formatDateUniversal(new Date(event.time + " UTC"))}`;
         eventsContainer.appendChild(eventElement);
     });
 }
 
-function formatDate(date) {
-    return date.toLocaleString('en-US', { 
-        month: '2-digit', 
-        day: '2-digit', 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        hour12: false, 
-        timeZone: 'UTC' 
-    }) + " UTC";
+function formatDateUniversal(date) {
+    const pad = (num) => (num < 10 ? '0' + num : num);
+    
+    const month = pad(date.getUTCMonth() + 1); // getUTCMonth() returns 0-11
+    const day = pad(date.getUTCDate());
+    const hour = pad(date.getUTCHours());
+    const minute = pad(date.getUTCMinutes());
+    
+    return `${month}.${day} ${hour}:${minute} UTC`;
 }
