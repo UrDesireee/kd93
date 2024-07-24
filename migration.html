@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navigation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <title>Migration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="style2.css" rel="stylesheet">
 </head>
 <body>
     <div class="header-container">
         <div class="animated-text">KINGDOM <span style="font-size: 30px;">3496</span></div>
-        <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        <button class="hamburger-menu" aria-label="Toggle navigation">&#9776;</button>
         <nav class="navbar">
-            <a href="#" class="nav-button">News</a>
-            <a href="#" class="nav-button">Migration</a>
-            <a href="#" class="nav-button">Calendar</a>
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="migration.html" class="nav-button">Migration</a>
+            <a href="leadership.html" class="nav-button">Leadership</a>
+            <a href="calendar.html" class="nav-button">Calendar</a>
         </nav>
     </div>
     <div class="container">
         <h1>Kingdom 3493 wants YOU</h1>
         <a href="https://discord.gg/your-discord-invite-link" class="cta-button">Join Our Discord</a>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

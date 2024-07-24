@@ -40,7 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${date.getUTCDate()}.${date.getUTCMonth() + 1} ${date.getUTCHours()}:${date.getUTCMinutes()}UTC`;
     }
 });
-function toggleMenu() {
-    var navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('active');
-}
+

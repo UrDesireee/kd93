@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const captionText = document.getElementById('caption');
-    
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navbar = document.querySelector('.navbar');
+
     articles.forEach((article, index) => {
         const headline = article.querySelector('.headline');
         const text = article.querySelector('.falling-text:not(.headline)');
@@ -50,8 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'none';
         }
     });
+
+    // Hamburger Menu Toggle
+    hamburgerMenu.addEventListener('click', () => {
+        navbar.classList.toggle('show');
+    });
 });
-function toggleMenu() {
-    var navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('active');
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navbar = document.querySelector('.navbar');
+
+    hamburgerMenu.addEventListener('click', () => {
+        navbar.classList.toggle('show');
+    });
+});
