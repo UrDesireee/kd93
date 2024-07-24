@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Text and Navbar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header-container">
+        <div class="animated-text">KINGDOM <span style="font-size: 30px;">3496</span></div>
+        <nav class="navbar">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="migration.html" class="nav-button">Migration</a>
+            <a href="leadership.html" class="nav-button">Leadership</a>
+            <a href="calendar.html" class="nav-button">Calendar</a>
+        </nav>
+    </div>
+    <div class="articles-container">
+        <!-- Article -->
+        <div class="falling-text-container" id="article1">
+            <div class="falling-text headline">Zone 7 News</div>
+            <div class="falling-text">We are Getting ready to strike with full force in Kings Land. no stone will remain unturned, we hope to get a long awaited fight  </div>
+            <div class="image-gallery">
+                <img src="Images/image3.png" alt="Zone 7" class="gallery-image">
+
+            </div>   
+        </div>
+
+        <!-- Article -->
+        <div class="falling-text-container" id="article2">
+            <div class="falling-text headline">Zone 6 News</div>
+            <div class="falling-text">After (not so intense) fights with 96 and 94, Kingdom 93 captures both zones 6 fully. This new development solidifies Kingdom 93's position in the region and opens up new opportunities for strategic expansions and alliances.</div>
+            <div class="image-gallery">
+                <img src="Images/Image1.png" alt="Zone 6 From 96 Side" class="gallery-image">
+                <img src="Images/Image2.png" alt="Zone 6 From 94 Side" class="gallery-image">
+            </div>   
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
