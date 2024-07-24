@@ -11,46 +11,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event Handling (for calendar.html)
     if (document.getElementById('currentEvent')) {
+        // Input your events here
         const events = [
-            { name: "Defeat 100 lvl 8 Forts", time: "24.07 19:00 UTC" },
-            { name: "Pass 7 Opens", time: "25.07 06:25 UTC" },
-            { name: "Another Event", time: "26.07 10:00 UTC" }
+            { name: "Defeat 100 lvl 8 Forts", time: "2024-07-23 19:00" },
+            { name: "Pass 7 Opens", time: "2024-07-25 06:25" },
+            { name: "Another Event", time: "2024-07-26 10:00" }
         ];
 
-        const currentEventElement = document.getElementById('currentEvent');
-        const eventsContainer = document.getElementById('eventsContainer');
-        const now = new Date();
-
-        let ongoingEvent = null;
-
-        events.forEach(event => {
-            const eventDate = parseDate(event.time);
-
-            const eventElement = document.createElement('div');
-            eventElement.textContent = `${event.name} - ${event.time}`;
-            eventsContainer.appendChild(eventElement);
-            
-            if (now >= eventDate) {
-                ongoingEvent = { name: event.name, date: eventDate };
-            }
-        });
-
-        if (ongoingEvent) {
-            currentEventElement.textContent = `${ongoingEvent.name} at ${formatDate(ongoingEvent.date)}`;
-        } else {
-            currentEventElement.textContent = "No current event";
-        }
+        updateEvents(events);
     }
 });
 
-function parseDate(dateStr) {
-    const [day, monthTime] = dateStr.split(' ');
-    const [month, time] = monthTime.split(' ');
-    const [hour, minute] = time.replace('UTC', '').split(':');
-    const [dayStr, monthStr] = day.split('.');
-    return new Date(Date.UTC(new Date().getFullYear(), monthStr - 1, dayStr, hour, minute));
+function updateEvents(events) {
+    const currentEventElement = document.getElementById('currentEvent');
+    const eventsContainer = document.getElementById('eventsContainer');
+    const now = new Date();
+
+    // Sort events by date
+    events.sort((a, b) => new Date(a.time) - new Date(b.time));
+
+    let currentEvent = null;
+    let upcomingEvents = [];
+
+    events.forEach(event => {
+        const eventDate = new Date(event.time + " UTC");
+        
+        if (eventDate <= now && (!currentEvent || eventDate > new Date(currentEvent.time + " UTC"))) {
+            currentEvent = event;
+        } else if (eventDate > now) {
+            upcomingEvents.push(event);
+        }
+    });
+
+    // Display current event
+    if (currentEvent) {
+        currentEventElement.textContent = `${currentEvent.name} (${formatDate(new Date(currentEvent.time + " UTC"))})`;
+    } else {
+        currentEventElement.textContent = "No current event";
+    }
+
+    // Display upcoming events
+    eventsContainer.innerHTML = "";
+    upcomingEvents.forEach(event => {
+        const eventElement = document.createElement('div');
+        eventElement.textContent = `${event.name} - ${formatDate(new Date(event.time + " UTC"))}`;
+        eventsContainer.appendChild(eventElement);
+    });
 }
 
 function formatDate(date) {
-    return `${date.getUTCDate()}.${date.getUTCMonth() + 1} ${date.getUTCHours()}:${date.getUTCMinutes()}UTC`;
+    return date.toLocaleString('en-US', { 
+        month: '2-digit', 
+        day: '2-digit', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        hour12: false, 
+        timeZone: 'UTC' 
+    }) + " UTC";
 }
