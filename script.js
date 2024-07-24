@@ -1,10 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Hamburger Menu Toggle
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navbar = document.querySelector('.navbar');
+
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    }
+
+    // Handling Modal for Image Gallery (if needed)
     const articles = document.querySelectorAll('.falling-text-container');
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const captionText = document.getElementById('caption');
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navbar = document.querySelector('.navbar');
 
     articles.forEach((article, index) => {
         const headline = article.querySelector('.headline');
@@ -43,18 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const closeModal = document.querySelector('.close');
-    closeModal.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
+    if (closeModal) {
+        closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
-        }
-    });
+        });
 
-    // Hamburger Menu Toggle
-    hamburgerMenu.addEventListener('click', () => {
-        navbar.classList.toggle('show');
-    });
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
 });
