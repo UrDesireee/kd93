@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburgerMenu) {
         hamburgerMenu.addEventListener('click', () => {
             navbar.classList.toggle('show');
+            // Animate hamburger to X
+            hamburgerMenu.classList.toggle('active');
         });
     }
 
