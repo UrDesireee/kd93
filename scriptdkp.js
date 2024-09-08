@@ -7,20 +7,19 @@ function calculateDKP() {
     // Get input values
     const t4KillsBefore = parseInt(document.getElementById('t4KillsBefore').value);
     const t5KillsBefore = parseInt(document.getElementById('t5KillsBefore').value);
-    const deathsBefore = parseInt(document.getElementById('deathsBefore').value);
     const powerBefore = parseInt(document.getElementById('powerBefore').value);
     
     const t4KillsAfter = parseInt(document.getElementById('t4KillsAfter').value);
     const t5KillsAfter = parseInt(document.getElementById('t5KillsAfter').value);
-    const deathsAfter = parseInt(document.getElementById('deathsAfter').value);
+    const t4DeathsAfter = parseInt(document.getElementById('t4DeathsAfter').value);
+    const t5DeathsAfter = parseInt(document.getElementById('t5DeathsAfter').value);
 
     // Calculate differences
     const t4KillsDiff = t4KillsAfter - t4KillsBefore;
     const t5KillsDiff = t5KillsAfter - t5KillsBefore;
-    const deathsDiff = deathsAfter - deathsBefore;
 
     // Calculate DKP
-    const dkp = (t4KillsDiff * 4) + (t5KillsDiff * 8) + (deathsDiff * 20);
+    const dkp = (t4KillsDiff * 1) + (t5KillsDiff * 2) + (t4DeathsAfter * 10) + (t5DeathsAfter * 20);
 
     // Calculate required DKP based on power
     let requiredDKP, powerMultiplier;
@@ -48,9 +47,10 @@ function calculateDKP() {
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `
         <h3>Results:</h3>
-        <p>T4 Kills gained: ${t4KillsDiff}</p>
-        <p>T5 Kills gained: ${t5KillsDiff}</p>
-        <p>Deaths: ${deathsDiff}</p>
+        <p>T4 Kills gained: ${t4KillsDiff} (${t4KillsDiff * 1} points)</p>
+        <p>T5 Kills gained: ${t5KillsDiff} (${t5KillsDiff * 2} points)</p>
+        <p>T4 Deaths: ${t4DeathsAfter} (${t4DeathsAfter * 10} points)</p>
+        <p>T5 Deaths: ${t5DeathsAfter} (${t5DeathsAfter * 20} points)</p>
         <p>Total DKP earned: ${dkp}</p>
         <p>Required DKP (${powerMultiplier}x power): ${requiredDKP}</p>
         <p>Percentage of required DKP achieved: ${percentageAchieved.toFixed(2)}%</p>
