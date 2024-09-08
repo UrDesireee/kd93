@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger Menu Toggle
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navbar = document.querySelector('.navbar');
 
@@ -9,13 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Event Handling
     const currentEventElement = document.getElementById('currentEvent');
     const timeLeftElement = document.getElementById('timeLeft');
     const eventsContainer = document.getElementById('eventsContainer');
 
     if (currentEventElement && eventsContainer) {
-        // Input your events here
         const events = [
             { name: "30 Alliance Forts built by all Alliances. Time Flexible. Stage ends when goal is complete.", time: "2024-09-07 00:00" },
             { name: "Waiting period for activation of Crusader Camps", time: "2024-09-08 00:00" },
