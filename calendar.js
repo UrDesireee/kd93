@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: "Top 20 for total power", time: "2024-09-21 13:26:48" },
             { name: "Waiting period for activation Ancient Ruins", time: "2024-09-22 13:26:48" },
             { name: "Your troops defeated 3 Stalkers", time: "2024-09-23 01:26:48" },
-            { name: "A total of 300 crusader flags built between all alliances in the Lost Kingdom. Time Flexible.", time: "2024-09-24 13:26:48" },
+            { name: "A total of 300 crusader flags built between all alliances in the Lost Kingdom. Time Flexible.", time: "2024-09-23 13:26:48" },
             { name: "Waiting period for activation Sanctuaries", time: "2024-09-26 13:26:48" },
             { name: "Your alliance controls ONE Sanctuary", time: "2024-09-27 01:26:48" },
             { name: "Your camp destroyed 50 lvl 8 barbarian forts", time: "2024-09-28 13:26:48" },
