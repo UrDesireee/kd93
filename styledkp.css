@@ -176,3 +176,6 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+.falling-text a{
+    text-decoration: none;
+}
