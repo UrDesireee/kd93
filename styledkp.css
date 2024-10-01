@@ -141,7 +141,7 @@ body {
 /* Custom styles for the DKP Calculator */
 label {
     display: inline-block;
-    width: 100px;
+    width: 150px;
     margin-right: 10px;
     margin-bottom: 10px;
 }
