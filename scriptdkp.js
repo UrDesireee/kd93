@@ -12,7 +12,6 @@ function calculateDKP() {
     const t4KillsAfter = parseInt(document.getElementById('t4KillsAfter').value);
     const t5KillsAfter = parseInt(document.getElementById('t5KillsAfter').value);
     const t4DeathsAfter = parseInt(document.getElementById('t4DeathsAfter').value);
-    const t5DeathsAfter = parseInt(document.getElementById('t5DeathsAfter').value);
 
     // Calculate differences
     const t4KillsDiff = t4KillsAfter - t4KillsBefore;
