@@ -19,7 +19,7 @@ function calculateDKP() {
     const t5KillsDiff = t5KillsAfter - t5KillsBefore;
 
     // Calculate DKP
-    const dkp = (t4KillsDiff * 1) + (t5KillsDiff * 2) + (t4DeathsAfter * 10) + (t5DeathsAfter * 20);
+    const dkp = (t4KillsDiff * 1) + (t5KillsDiff * 2) + (t4DeathsAfter * 15);
 
     // Calculate required DKP based on power
     let requiredDKP, powerMultiplier;
@@ -49,8 +49,7 @@ function calculateDKP() {
         <h3>Results:</h3>
         <p>T4 Kills gained: ${t4KillsDiff} (${t4KillsDiff * 1} points)</p>
         <p>T5 Kills gained: ${t5KillsDiff} (${t5KillsDiff * 2} points)</p>
-        <p>T4 Deaths: ${t4DeathsAfter} (${t4DeathsAfter * 10} points)</p>
-        <p>T5 Deaths: ${t5DeathsAfter} (${t5DeathsAfter * 20} points)</p>
+        <p>Deaths: ${t4DeathsAfter} (${t4DeathsAfter * 15} points)</p>
         <p>Total DKP earned: ${dkp}</p>
         <p>Required DKP (${powerMultiplier}x power): ${requiredDKP}</p>
         <p>Percentage of required DKP achieved: ${percentageAchieved.toFixed(2)}%</p>
