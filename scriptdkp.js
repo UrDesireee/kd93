@@ -48,7 +48,7 @@ function calculateDKP() {
         <h3>Results:</h3>
         <p>T4 Kill Points gained: ${t4KillsDiff} (${t4KillsDiff * 1} points)</p>
         <p>T5 Kill Points gained: ${t5KillsDiff} (${t5KillsDiff * 2} points)</p>
-        <p>Deaths: ${t4DeathsAfter} (${t4DeathsAfter * 15} points)</p>
+        <p>Deaths: ${t4DeathsAfter} (${t4DeathsAfter * 10} points)</p>
         <p>Total DKP earned: ${dkp}</p>
         <p>Required DKP (${powerMultiplier}x power): ${requiredDKP}</p>
         <p>Percentage of required DKP achieved: ${percentageAchieved.toFixed(2)}%</p>
